@@ -1,6 +1,6 @@
 name: gm_crypto
 description: "flutter实现国密SM2、SM3、SM4算法"
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Chenshuai770/flutter_sm
 repository: https://github.com/Chenshuai770/flutter_sm
 issue_tracker: https://github.com/Chenshuai770/flutter_sm/issues
@@ -16,7 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 topics:
   - cryptography

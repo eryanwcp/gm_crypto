@@ -202,11 +202,25 @@ class SM4 {
     return SMUtils.bytesToHexString(output);
   }
 
+  static List<int> encryptBytes(List<int> input,
+      {String? key, SM4CryptoMode mode = SM4CryptoMode.ECB, String? iv}) {
+    if (key != null) setKey(key);
+    List<int> output = _crypto(input, SM4_ENCRYPT, mode, iv);
+    return output;
+  }
+
   static String decrypt(String cipherText,
       {String? key, SM4CryptoMode mode = SM4CryptoMode.ECB, String? iv}) {
     if (key != null) setKey(key);
     List<int> input = SMUtils.hexStringToBytes(cipherText);
     List<int> output = _crypto(input, SM4_DECRYPT, mode,iv);
     return utf8.decode(output);
+  }
+
+  static List<int> decryptBytes(List<int> input,
+      {String? key, SM4CryptoMode mode = SM4CryptoMode.ECB, String? iv}) {
+    if (key != null) setKey(key);
+    List<int> output = _crypto(input, SM4_DECRYPT, mode,iv);
+    return output;
   }
 }
